@@ -1,0 +1,144 @@
+/* styleIA.css - Tema Stardew Valley (Corrigido) */
+
+:root {
+    /* Paleta Stardew Valley */
+    --cor-fundo-site: #fff8e1;     /* Creme / Papel de parede */
+    
+    --moldura-madeira: #5e3a22;    /* Castanho Madeira Escura (Bordas) */
+    --fundo-papel: #fffcfa;        /* Branco/Creme muito claro (Fundo do chat) */
+    
+    --botao-verde: #76c442;        /* Verde Stardew (Botão normal) */
+    --botao-verde-hover: #568c2d;  /* Verde Musgo (Botão hover) */
+    
+    --texto-titulo: #ffcc00;       /* Amarelo Ouro (Títulos) */
+    --texto-principal: #4a3b2a;    /* Castanho Escuro (Texto) */
+    
+    --msg-user-bg: #dcedc8;        /* Verde pálido (Mensagem usuário) */
+    --msg-ai-bg: #ffffff;          /* Branco (Mensagem IA) */
+    
+    --borda-fina: #8b4513;         /* Cor de contorno sutil */
+}
+
+/* REMOVI O ESTILO DO BODY DAQUI PARA NÃO QUEBRAR O LAYOUT */
+
+/* A Janela Principal do Chat */
+.chat-container {
+    width: 100%;
+    max-width: 500px; /* Um pouco mais largo */
+    background-color: var(--fundo-papel);
+    border: 4px solid var(--moldura-madeira); /* Borda grossa de madeira */
+    border-radius: 15px;
+    box-shadow: 6px 6px 0 rgba(62, 39, 35, 0.4); /* Sombra dura "pixel art" */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 600px; /* Altura fixa para o chat não esticar demais */
+    position: relative;
+}
+
+/* Cabeçalho do Chat */
+.chat-header {
+    background-color: var(--moldura-madeira);
+    color: var(--texto-titulo);
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 4px solid #3e2723;
+    text-shadow: 2px 2px 0px #3e2723;
+}
+
+/* Área das Mensagens */
+.chat-box {
+    flex: 1;
+    background-color: var(--fundo-papel);
+    background-image: radial-gradient(#f0e6d2 1px, transparent 1px);
+    background-size: 20px 20px;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Estilo das Mensagens */
+.message {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--texto-principal);
+    border: 2px solid #e6dcca;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.05);
+}
+
+.message.user {
+    align-self: flex-end;
+    background-color: var(--msg-user-bg);
+    border-color: #c5e1a5;
+    border-bottom-right-radius: 2px;
+}
+
+.message.ai {
+    align-self: flex-start;
+    background-color: var(--msg-ai-bg);
+    border-color: #e0e0e0;
+    border-bottom-left-radius: 2px;
+}
+
+/* Área de Input */
+.input-area {
+    padding: 15px;
+    background-color: #fdfbf7;
+    border-top: 2px solid #d7ccc8;
+    display: flex;
+    gap: 8px;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #8d6e63;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.95rem;
+    background-color: #fff;
+    color: var(--texto-principal);
+}
+
+.input-area input:focus {
+    border-color: var(--botao-verde);
+}
+
+.input-area button {
+    background-color: var(--botao-verde);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-bottom: 4px solid var(--botao-verde-hover);
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+.input-area button:hover {
+    background-color: var(--botao-verde-hover);
+    border-bottom: 4px solid #33691e;
+    transform: translateY(1px);
+}
+
+.input-area button:active {
+    transform: translateY(4px);
+    border-bottom: 0;
+}
+
+/* Scrollbar */
+.chat-box::-webkit-scrollbar { width: 10px; }
+.chat-box::-webkit-scrollbar-track { background: #f1f1f1; }
+.chat-box::-webkit-scrollbar-thumb { background: #a1887f; border-radius: 5px; border: 2px solid #f1f1f1; }
