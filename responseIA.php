@@ -12,7 +12,7 @@ if (!isset($data->text) || empty($data->text)) {
 $text = $data->text;
 
 
-$apiKey = 'AIzaSyA0VCSGKA7foA76uU_EvVwA5E8Trf9V7o4'; 
+$apiKey = 'chave_api'; 
 
 
 $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" . $apiKey;
